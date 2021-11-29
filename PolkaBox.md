@@ -120,7 +120,7 @@ Our team consists of the following roles:
 - https://github.com/mattdm3 Matteo Mortelliti
 - https://github.com/yul761 Yuchen Lin
 - https://github.com/m3mayllon Mayllon Miranda
-- https://github.com/ifabrisarabellapark Irene Fabris
+- https://github.com/irene-bbox Irene Fabris
 - https://github.com/BalloonBox-Hongbin Hongbin Lin
 - https://github.com/yoon-bbox Yoon Kim
  
@@ -129,7 +129,7 @@ Our team consists of the following roles:
 - https://www.linkedin.com/in/matteo-mortelliti/ Matteo Mortelliti
 - https://www.linkedin.com/in/foggysalmon/ Yuchen Lin
 - https://www.linkedin.com/in/mayllon-miranda-8aa9b0163/ Mayllon Miranda
--https://github.com/irene-bbox/ Irene Fabris
+- https://www.linkedin.com/in/irenefabris/ Irene Fabris
 - https://www.linkedin.com/in/hongbinlin/ Hongbin Lin
 - https://www.linkedin.com/in/imyoonkim/ Yoon Kim
  
