@@ -35,7 +35,7 @@ Our project, PolkaBox is an open platform + dashboard for creating a huge lake o
 5. **External Data Sources**: A combination of WebSocket connections and web scraping tools for assessing public records. PolkaBox will have several services running on near-real-time schedules to retrieve, clean, format, and store data from external sources. The goal is to keep these APIs public to make the intelligence in the entire dashboard open-sourced as anyone can then fork the PolkaBox and spin it up. 
 
 
-7. **APIs**: Python (Django) + webhook framework with both private (authenticated) and public APIs that can be used. APIs will be monitored for usage and throttled based on developer token limits + whitelisted IP addresses.
+7. **APIs**: Python (Django) + webhook framework with public APIs that can be used. APIs will be monitored for usage and throttled based on developer token limits + whitelisted IP addresses.
 
 
 9. **Analytics Modules**: Python developed functions for performing machine learning using popular, well-supported libraries such as SciKit-Learn, PyTorch, etc. The analytics modules will have a full ETL pipeline setup for ingesting data based on CRON jobs defined by the individual modules, i.e., a news-reader may update daily and blockchain data every 5 seconds.
@@ -80,7 +80,7 @@ Throughout this application, we define ‘Market Sentiment’ to be the general 
 
     Comparison with projects inside of the Polkadot ecology. Polkascan, Polkastats, and Subscan are Polkadot-based block explorers. They purely feature on-chain data but they have no tool to interpret and relate given data to off-chain events. They also don’t feature any predictions, which, on the other hand, is the battle horse of X Predict Market, a prediction market that focuses on community and sociability. Unfortunately, the latter also lacks the integration of off-chain data to generate predictions.
 
-    What differentiates us is that PolkaBox will be the first project in the Polkadot ecology to aggregate granular parachain data with off-chain public/private APIs. We will also be the first Polkadot project with a focus on market sentiment.
+    What differentiates us is that PolkaBox will be the first project in the Polkadot ecology to aggregate granular parachain data with off-chain public APIs. We will also be the first Polkadot project with a focus on market sentiment.
  
 ## Team :busts_in_silhouette:
 ### Team members
