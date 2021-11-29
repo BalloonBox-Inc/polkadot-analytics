@@ -159,7 +159,7 @@ https://github.com/BalloonBox-Inc/polkadot-analytics/tree/main/UI%20diagrams
 | 2. | Endpoints | We will create a set of GET endpoints with limited usage from the database (to be used by the dashboard). |
 
  
-### Milestone 2 - Public/Private APIs
+### Milestone 2 - APIs
 - **Estimated duration:** 1 month
 - **FTE:**  4
 - **Costs:** 15,000 USD
@@ -171,7 +171,7 @@ https://github.com/BalloonBox-Inc/polkadot-analytics/tree/main/UI%20diagrams
 | 0c. | API Documentation | We will provide hosted API docs with a prebuilt collection and environment
 | 0d. | Testing Guide | Core functions will be fully covered by unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests. |
 | 0e. | Docker | We will provide a Dockerfile(s) that can be used to test all the functionality delivered with this milestone. |
-| 1. | APIs Module | We will build several public/private APIs to fetch off-chain data. The data sources and their corresponding docs and limitations will be published in an API readme file. | 
+| 1. | APIs Module | We will build several public APIs to fetch off-chain data. The data sources and their corresponding docs and limitations will be published in an API readme file. | 
 | 2. | Data Ingestion/Storage | Set up external data ingestion and storage + public API endpoints for accessing external data in isolation. |
 | 3. | UI Module: general WebApp | We will develop the initial platform infrastructure. | 
 
@@ -204,8 +204,7 @@ https://github.com/BalloonBox-Inc/polkadot-analytics/tree/main/UI%20diagrams
     
 2. **External Data Sources**
 
-    - Add more off-chain data sources (this will be an ongoing, never-ending endeavor. At the same time, we recognize that growing the database indefinitely would incur cloud fees so funds provision will be made for tech expenses. We plan to throttle the public APIs initially to avoid too much traffic once public. We plan on using Github donations to keep the public database open and maintained as we see a lot of interest and value in providing rich data via an easy-to-use API alongside blockchain data.
-    - Complement public with private APIs because accessing rich data will significantly improve prediction confidence
+    - Add more off-chain data sources (this will be an ongoing, never-ending endeavor. At the same time, we recognize that growing the database indefinitely would incur cloud fees so funds provision will be made for tech expenses. We plan to throttle the public APIs initially to avoid too much traffic once public. We plan on using Github donations to keep the public database open and maintained as we see a lot of interest and value in providing rich data via an easy-to-use API alongside blockchain data
 
 
 3. **Analytics Models**
