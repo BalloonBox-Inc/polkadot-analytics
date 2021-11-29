@@ -129,7 +129,7 @@ Our team consists of the following roles:
 - https://www.linkedin.com/in/matteo-mortelliti/ Matteo Mortelliti
 - https://www.linkedin.com/in/foggysalmon/ Yuchen Lin
 - https://www.linkedin.com/in/mayllon-miranda-8aa9b0163/ Mayllon Miranda
-- https://www.linkedin.com/in/irenefabris/ Irene Fabris
+-https://github.com/irene-bbox/ Irene Fabris
 - https://www.linkedin.com/in/hongbinlin/ Hongbin Lin
 - https://www.linkedin.com/in/imyoonkim/ Yoon Kim
  
