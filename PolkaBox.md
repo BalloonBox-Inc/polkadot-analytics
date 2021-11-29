@@ -173,7 +173,8 @@ https://github.com/BalloonBox-Inc/polkadot-analytics/tree/main/UI%20diagrams
 | 0e. | Docker | We will provide a Dockerfile(s) that can be used to test all the functionality delivered with this milestone. |
 | 1. | APIs Module | We will build several public APIs to fetch off-chain data. The data sources and their corresponding docs and limitations will be published in an API readme file. | 
 | 2. | Data Ingestion/Storage | Set up external data ingestion and storage + public API endpoints for accessing external data in isolation. |
-| 3. | UI Module: general WebApp | We will develop the initial platform infrastructure. | 
+| 3. |  UI Module: General WebApp  | Develop a web application for our platform infrastructure. We will design the landing page implementing a drop-down menu linked to 3 dashboards organizing data thematically.  |
+| 4. |  Support more Kusama Tokens  |  We’ll integrate data for KSM, KAR, MOVR, KMA tokens.  | 
 
  
 ### Milestone 3 - Feature Engineering, Website, Dashboards
@@ -188,10 +189,16 @@ https://github.com/BalloonBox-Inc/polkadot-analytics/tree/main/UI%20diagrams
 | 0c. | Testing Guide | Core functions will be fully covered by unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests. |
 | 0d. | Docker | We will provide a Dockerfile(s) that can be used to test all the functionality delivered with this milestone. |
 | 0e. | Article | We will publish an **article**/workshop that explains the concept and vision of PolkaBox. | 
-| 1. | Analytics Modules | We will create intelligence from the aggregated raw data (blockchain and external). |
-| 2. | UI Module: refine WebApp | We will develop the web application implementing: global filters (time granularity, chain, asset), feeds to selected news articles, UI refinement, documentation, and tutorials. | 
-| 3. | Feature Engineering | We will deploy ML for prediction tiles and NLP to aggregate news feeds and several off-chain sources for the market sentiment analysis. | 
-| 4. | Data Boards | We will build the front end and UX/UI of the platform. | 
+| 1. |  3 Data Boards  | Build the front end and UX/UI of the platform: design 3 interactive dashboards for three different projects in the Polkadot ecosystem. Our planned projects are: DeFi tracking (blocks, transactions, log events), Market Sentiment Analysis (news feed, fear/greed gauge), prediction (price). We provided UI diagrams for each of the 3 dashboards.  Although the project topic might change, the number of dashboards is fixed. |
+| 2.  | Filter Module | Implement global filters for the dashboards, including filter by time granularity, blockchain, asset, etc. |
+| 3. | Platform Navigation Tools | Implement a search tool to filter selected news articles by pertinent hot word. |
+| 4. | DeFi Tracking Module | Create a dashboard visualizing on-chain data. include dashboard tile of chain GDP, Plotly Sankey plot for deposited and withdrawn assets by volume, donut plot of chain GDP breakdown by asset.  |
+| 5. | Sentiment Analysis Module | Deploy Python’s modules TensorFlow, PyTorch, Scikit-Learn to perform a news sentiment analysis of aggregated API data (tokenize, normalize, stemming, lemmatize) and determine investor’s attitude (greed/stalemate/fear) on a chosen asset in the PolkaDot ecosystem. Include a gauge chart for market sentiment visualization. |
+| 6. | Predictive Analysis Module | Aggregate raw data (blockchain and external), run ML model on historical price trend and market sentiment data, and cast price prediction for main tokens in PolkaDot ecosystem, including DOT, LINK, KSM, etc.  |
+| 7. |  Benchmark  | Provide a short commentary comparing the performance of our predictive algorithms with two other prediction models in the PolkaDot/Kusama ecosystem, e.g., comparison with https://github.com/w3f/Grants-Program/blob/master/applications/XPredictMarket.md  |
+| 8. | UI Module: refine WebApp | Improve functionality and aesthetics, layout, and UI feedback (e.g., icon badge, modal alerts) | 
+| 9. |  File Processing  | Implement in our platform file operation services such as dashboard tile download, table download, and page download as pdf report.  |
+
  
  
  
