@@ -159,7 +159,7 @@ https://docs.google.com/document/d/1aLSm9HK-3YtwjXKLh_KPRL75P8t8zleEMNInyZl445k/
 | 0b. | Documentation | We will provide **inline documentation** of the code. |
 | 0c. | Testing Guide | Core functions will be fully covered by unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests. |
 | 0d. | Docker | We will provide a Dockerfile(s) that can be used to test all the functionality delivered with this milestone. |
-| 1. | Hosted Node | We will build the node to index and retrieve endemic Polkadot data and store it dynamically in PostgreSQL. | 
+| 1. | Node Set up | We will set up a Polkadot node to index and retrieve endemic Polkadot data and store it dynamically in a data lake. | 
 | 2. | Endpoints | We will create a set of GET endpoints with limited usage from the database (to be used by the dashboard). |
 
  
