@@ -138,7 +138,7 @@ We have completed the planning of the product prototype and the design of the UI
 
 https://github.com/BalloonBox-Inc/polkadot-analytics/tree/main/UI%20diagrams
 
-We have created a deployment and usage how-to-article describing the deliverable of our first and secomd milestones. Check the following link:
+We have created a deployment and usage how-to-article describing the deliverable of our first and second milestones. Check the following link:
 
 https://docs.google.com/document/d/1aLSm9HK-3YtwjXKLh_KPRL75P8t8zleEMNInyZl445k/edit?usp=sharing
  
