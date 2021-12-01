@@ -241,4 +241,4 @@ https://docs.google.com/document/d/1aLSm9HK-3YtwjXKLh_KPRL75P8t8zleEMNInyZl445k/
 
 **How did you hear about the Grants Program?** We heard through the Web3 Foundation Webpage.
 
-**Have you ever applied for other grants?** Yes, we have applied for another grant to fund this project proposal. We are waiting for approval. 
+**Have you ever applied for other grants?** Yes, we have applied for another grant to fund an entirely different project. We are waiting for approval. 
