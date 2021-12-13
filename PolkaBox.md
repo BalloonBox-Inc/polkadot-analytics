@@ -26,7 +26,7 @@ Our project, PolkaBox is an open platform + dashboard for creating a huge lake o
 ![](https://github.com/BalloonBox-Inc/polkadot-analytics/blob/main/images/PolkaBox_architecture.png)
 
 #### Infrastructure Components
-1. **Indexers**: an indexer is a node operator used to extract, transform, and load data from an active blockhain node into a pre-defined schema of tables in a database. Since Polkadot is a network of parachains, each with their own metadata, we will build a different indexer for each parachain we want to access. Instead of building our indexers from scratch, we will deploy and expand pre-existing open source indexer instances. Specifically, we'll use two tools: [SubQuery](https://subquery.network/), a GraphQL API-based blockchain indexer for Polkadot, Kusama, and other parachains, the [web3go](https://github.com/web3go-xyz) indexer instances which are a customized version of the SubQuery framework. Web3Go is an ongoing open-source project recipient of a Web3Foundation Grant.
+1. **Indexers**: an indexer is a node operator used to extract, transform, and load data from an active blockhain node into a pre-defined schema of tables in a database. Since Polkadot is a network of parachains, each with their own metadata, we will build a different indexer for each parachain we want to access. Instead of building our indexers from scratch, we will deploy and expand pre-existing open source indexer instances. Specifically, we'll use two tools: [1.] [SubQuery](https://subquery.network/), a GraphQL API-based blockchain indexer for Polkadot, Kusama, and other parachains, the [2.] [web3go](https://github.com/web3go-xyz) indexer instances which are a customized version of the SubQuery framework. Web3Go is an ongoing open-source project recipient of a Web3Foundation Grant.
 
 2. **Database**: PostgreSQL database for storing blockchain + external data
 
@@ -150,9 +150,9 @@ https://docs.google.com/document/d/1aLSm9HK-3YtwjXKLh_KPRL75P8t8zleEMNInyZl445k/
 - **Full-Time Equivalent (FTE):**  4.5
 - **Total Costs:** 49,000 USD 
  
-### Milestone 1 - Indexer Instances, Database, API Layer #1
+### Milestone 1 - Indexer Instances, Database, API Layer #1, Data Board, More Tokens
 - **Estimated duration:** 1 month
-- **FTE:**  5.5
+- **FTE:**  5
 - **Costs:** 20,000 USD
  
 | Number | Deliverable | Specification |
@@ -161,10 +161,15 @@ https://docs.google.com/document/d/1aLSm9HK-3YtwjXKLh_KPRL75P8t8zleEMNInyZl445k/
 | 0b. | Documentation | We will provide **inline documentation** of the code. |
 | 0c. | Testing Guide | Core functions will be fully covered by unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests. |
 | 0d. | Docker | We will provide a Dockerfile(s) that can be used to test all the functionality delivered with this milestone. |
-| 1. | Indexer Instances | | 
-| 2. | | |
+| 1. | Indexer Instances | We will deploy the existing SubQuery SDK framework to index low level blockchain elements including accounts, blocks, events, and transactions. Currently SubQuery saves by default the indexed data in the built-in Postgres database. This is convenient for us as we're also usin Postgres as our database of choice. We will adapt the indexers to the metadata of the specific parachain we want to index. | 
+| 2. | Database, Endpoints | We will set up Postgres as the database storing the indexed on-chain data, and we will create a set of GET endpoints with limited usage from the database (to be used by the dashboard). |
+| 3. | Sentiment Analysis Data Board |  The Market Sentiment Analysis is the core value and novelty of PolkaBox. We will build pre-defined schemas of tables with referential integrity of on-chain data (TVL, historical of price, transactions count and volume) to later build our Market Sentiment Analysis dashboard. |
+| 4. | Support Polkadot Tokens  |  We want integrate data for DOT, PCX, RING tokens. | 
+| 5. | Support Kusama Tokens  |  We want integrate data for KSM, KAR, MOVR, KMA tokens. | 
+
  
-### Milestone 2 - API Layer #2
+ 
+### Milestone 2 - API Layer #2, Sentiment Analysis
 - **Estimated duration:** 1 month
 - **FTE:**  4
 - **Costs:** 15,000 USD
@@ -178,11 +183,13 @@ https://docs.google.com/document/d/1aLSm9HK-3YtwjXKLh_KPRL75P8t8zleEMNInyZl445k/
 | 0e. | Docker | We will provide a Dockerfile(s) that can be used to test all the functionality delivered with this milestone. |
 | 1. | APIs Module | We will build several public APIs to fetch off-chain data. The data sources and their corresponding docs and limitations will be published in an API readme file. | 
 | 2. | Data Ingestion/Storage | Set up external data ingestion and storage + public API endpoints for accessing external data in isolation. |
-| 3. |  UI Module: General WebApp  | Develop a web application for our platform infrastructure. We will design the landing page implementing a drop-down menu linked to 3 dashboards organizing data thematically.  |
-| 4. |  Support more Kusama Tokens  |  We’ll integrate data for KSM, KAR, MOVR, KMA tokens.  | 
+| 3. | Sentiment Analysis | Deploy Python’s modules TensorFlow, PyTorch, Scikit-Learn to perform a news sentiment analysis of aggregated API data (tokenize, normalize, stemming, lemmatize) and determine investor’s attitude (greed/stalemate/fear) on DOT (native currency) in the Polkadot ecosystem. |
+| 4. | Sentiment Algorithm | Design the algorithm to quantify market sentiment for a token (bullish-stale-bearish) after aggregating news feed. Publish a README file to describe the Market Sentiment Algorithm. |
+| 5. | UI Module: General WebApp  | Develop a web application for our platform infrastructure. We will design the landing page implementing a drop-down menu linked to 2 dashboards organizing data thematically. |
+
 
  
-### Milestone 3 - Feature Engineering, Website, Dashboards
+### Milestone 3 - Feature Engineeering, WebApp, UI Design, Dashboards
 - **Estimated duration:** 1 month
 - **FTE:**  4
 - **Costs:** 14,000 USD
@@ -194,13 +201,13 @@ https://docs.google.com/document/d/1aLSm9HK-3YtwjXKLh_KPRL75P8t8zleEMNInyZl445k/
 | 0c. | Testing Guide | Core functions will be fully covered by unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests. |
 | 0d. | Docker | We will provide a Dockerfile(s) that can be used to test all the functionality delivered with this milestone. |
 | 0e. | Article | We will publish an **article**/workshop that explains the concept and vision of PolkaBox. | 
-| 1. |  3 Data Boards  | Build the front end and UX/UI of the platform: design 3 interactive dashboards for three different projects in the Polkadot ecosystem. Our planned projects are: DeFi tracking (blocks, transactions, log events), Market Sentiment Analysis (news feed, fear/greed gauge), Prediction (price). We provided UI diagrams for each of the 3 dashboards.  Although the project topic might change, the number of dashboards is fixed. |
+| 1. |  2 Dashboards  | Build the front end and UX/UI of the platform: design 2 interactive dashboards for two different projects in the Polkadot ecosystem. Our planned projects are: Market Sentiment Analysis (news feed, fear/greed gauge) and Prediction (price). We provided UI diagrams for each of the 2 dashboards.  Although the project topic might change, the number of dashboards is fixed. |
 | 2.  | Filter Module | Implement global filters for the dashboards, including filter by time granularity, blockchain, asset, etc. |
 | 3. | Platform Navigation Tools | Implement a search tool to filter selected news articles by pertinent hot word. |
-| 4. | DeFi Tracking Module | Create a dashboard visualizing on-chain data. include dashboard tile of chain GDP, Plotly Sankey plot for deposited and withdrawn assets by volume, donut plot of chain GDP breakdown by asset.  |
-| 5. | Sentiment Analysis Module | Deploy Python’s modules TensorFlow, PyTorch, Scikit-Learn to perform a news sentiment analysis of aggregated API data (tokenize, normalize, stemming, lemmatize) and determine investor’s attitude (greed/stalemate/fear) on DOT (native currency) in the Polkadot ecosystem. Include a gauge chart for market sentiment visualization. The sentiment analysis will be constrained to a maximum of 5 news sources. |
+| 4. | Sentiment Analysis Module | Generate a dashboard for Market Sentiment Analysis. Include a gauge chart for market sentiment visualization as well as a list of news feeds filtered by keyword. At the start, we will constrain the news feed to a maximum of 5 news sources. |
+| 5. |  DeFi Tracking | Substantiate the Sentiment Analysis dashboard visualizing on-chain data on DeFi Tracking. Include dashboard tile of chain GDP, Plotly Sankey plot for deposited and withdrawn assets by volume, donut plot of chain GDP breakdown by asset.  |
 | 6. | Predictive Analysis Module | Aggregate raw data (blockchain and external), run ML model on historical price trend and market sentiment data, and cast price prediction for a maximum of the tokens in Polkadot ecosystem, i.e. the top 10 tomen by TLV, such as, DOT, LINK, KSM, etc.  |
-| 7. |  Benchmark  | Provide a short commentary comparing the performance of our predictive algorithms with two other prediction models in the Polkadot/Kusama ecosystem, e.g., comparison with https://github.com/w3f/Grants-Program/blob/master/applications/XPredictMarket.md  |
+| 7. |  Benchmark  | Provide a short commentary comparing the performance of our predictive algorithms with two other prediction models in the Polkadot/Kusama ecosystem, e.g., comparison with [XPredictMarket](https://github.com/w3f/Grants-Program/blob/master/applications/XPredictMarket.md) |
 | 8. | UI Module: refine WebApp | Improve functionality and aesthetics, layout, and UI feedback (e.g., icon badge, modal alerts) | 
 | 9. |  File Processing  | Implement in our platform file operation services such as dashboard tile download, table download, and page download as pdf or csv file. |
 
