@@ -26,22 +26,24 @@ Our project, PolkaBox is an open platform + dashboard for creating a huge lake o
 ![](https://github.com/BalloonBox-Inc/polkadot-analytics/blob/main/images/PolkaBox_architecture.png)
 
 #### Infrastructure Components
-1. **Nodes**: PolkaBox needs to provide near-real-time analytics both to visualize and to access programmatically. For this reason, we’ll set up and maintain our own nodes to maintain a public record as a participant without relying on 3rd party APIs for the raw blockchain data. The nodes will be built on Raspberry Pi 4 (8GB) computers (per node) and managed in Dockerized environments with the hardware installed on-site. These nodes will all be open-sourced.
+1. **Indexers**: an indexer is a node operator used to extract, transform, and load data from an active blockhain node into a pre-defined schema of tables in a database. Since Polkadot is a network of parachains, each with their own metadata, we will build a different indexer for each parachain we want to access. Instead of building our indexers from scratch, we will deploy and expand pre-existing open source indexer instances, which have already been built by ongoing projects funded by the Web3Foundation, e.g. [web3go](https://github.com/web3go-xyz)
+
+2. **Database**: PostgreSQL database for storing blockchain + external data
 
 
-3. **Database**: PostgreSQL database for storing blockchain + external data
+3. **External Data Sources**: A combination of WebSocket connections and web scraping tools for assessing public records. PolkaBox will have several services running on near-real-time schedules to retrieve, clean, format, and store data from external sources. The goal is to keep these APIs public to make the intelligence in the entire dashboard open-sourced as anyone can then fork the PolkaBox and spin it up. 
 
 
-5. **External Data Sources**: A combination of WebSocket connections and web scraping tools for assessing public records. PolkaBox will have several services running on near-real-time schedules to retrieve, clean, format, and store data from external sources. The goal is to keep these APIs public to make the intelligence in the entire dashboard open-sourced as anyone can then fork the PolkaBox and spin it up. 
+4. **API Layer #1**: fetching on-chain data. Python (Django) for Explorer APIs, Tables APIs, Time-series APIs of parachain data mapped to our database through the Indexer. 
 
 
-7. **APIs**: Python (Django) + webhook framework with public APIs that can be used. APIs will be monitored for usage and throttled based on developer token limits + whitelisted IP addresses.
+5. **API Layer #2**: fetching off-chain data. Python (Django) + webhook framework with public APIs that can be used. APIs will be monitored for usage and throttled based on developer token limits + whitelisted IP addresses.
 
 
-9. **Analytics Modules**: Python developed functions for performing machine learning using popular, well-supported libraries such as SciKit-Learn, PyTorch, etc. The analytics modules will have a full ETL pipeline setup for ingesting data based on CRON jobs defined by the individual modules, i.e., a news-reader may update daily and blockchain data every 5 seconds.
+6. **Analytics Modules**: Python developed functions for performing machine learning using popular, well-supported libraries such as SciKit-Learn, PyTorch, etc. The analytics modules will have a full ETL pipeline setup for ingesting data based on CRON jobs defined by the individual modules, i.e., a news-reader may update daily and blockchain data every 5 seconds.
 
 
-11. **Dashboard**: Next.js + React + Typescript + Prisma + Cypress (testing) developed dashboard. Fully open-sourced which visualizes the data with limited capacity, i.e. some prediction modules may be baked into the dashboard, e.g. staking pool yield or liquidity fluctuation whereby other modules in the dashboard would be user-triggered and data-dependent, e.g. predict DOT token price based on US government election results.
+7. **Dashboard**: Next.js + React + Typescript + Prisma + Cypress (testing) developed dashboard. Fully open-sourced which visualizes the data with limited capacity, i.e. some prediction modules may be baked into the dashboard, e.g. staking pool yield or liquidity fluctuation whereby other modules in the dashboard would be user-triggered and data-dependent, e.g. predict DOT token price based on US government election results.
  
 ### Ecosystem Fit
 
