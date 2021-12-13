@@ -26,7 +26,7 @@ Our project, PolkaBox is an open platform + dashboard for creating a huge lake o
 ![](https://github.com/BalloonBox-Inc/polkadot-analytics/blob/main/images/PolkaBox_architecture.png)
 
 #### Infrastructure Components
-1. **Indexers**: an indexer is a node operator used to extract, transform, and load data from an active blockhain node into a pre-defined schema of tables in a database. Since Polkadot is a network of parachains, each with their own metadata, we will build a different indexer for each parachain we want to access. Instead of building our indexers from scratch, we will deploy and expand pre-existing open source indexer instances, which have already been built by ongoing projects funded by the Web3Foundation, e.g. [web3go](https://github.com/web3go-xyz)
+1. **Indexers**: an indexer is a node operator used to extract, transform, and load data from an active blockhain node into a pre-defined schema of tables in a database. Since Polkadot is a network of parachains, each with their own metadata, we will build a different indexer for each parachain we want to access. Instead of building our indexers from scratch, we will deploy and expand pre-existing open source indexer instances. Specifically, we'll use two tools: [SubQuery](https://subquery.network/), a GraphQL API-based blockchain indexer for Polkadot, Kusama, and other parachains, the [web3go](https://github.com/web3go-xyz) indexer instances which are a customized version of the SubQuery framework. Web3Go is an ongoing open-source project recipient of a Web3Foundation Grant.
 
 2. **Database**: PostgreSQL database for storing blockchain + external data
 
@@ -150,7 +150,7 @@ https://docs.google.com/document/d/1aLSm9HK-3YtwjXKLh_KPRL75P8t8zleEMNInyZl445k/
 - **Full-Time Equivalent (FTE):**  4.5
 - **Total Costs:** 49,000 USD 
  
-### Milestone 1 - Hosted-Node, Database
+### Milestone 1 - Indexer Instances, Database, API Layer #1
 - **Estimated duration:** 1 month
 - **FTE:**  5.5
 - **Costs:** 20,000 USD
@@ -161,11 +161,10 @@ https://docs.google.com/document/d/1aLSm9HK-3YtwjXKLh_KPRL75P8t8zleEMNInyZl445k/
 | 0b. | Documentation | We will provide **inline documentation** of the code. |
 | 0c. | Testing Guide | Core functions will be fully covered by unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests. |
 | 0d. | Docker | We will provide a Dockerfile(s) that can be used to test all the functionality delivered with this milestone. |
-| 1. | Node Set up | We will set up a Polkadot node to index and retrieve endemic Polkadot data and store it dynamically in a data lake. | 
-| 2. | Endpoints | We will create a set of GET endpoints with limited usage from the database (to be used by the dashboard). |
-
+| 1. | Indexer Instances | | 
+| 2. | | |
  
-### Milestone 2 - APIs
+### Milestone 2 - API Layer #2
 - **Estimated duration:** 1 month
 - **FTE:**  4
 - **Costs:** 15,000 USD
