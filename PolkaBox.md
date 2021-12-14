@@ -14,22 +14,21 @@
 
 ### Overview
 
-PolkaBox is an open data platform that enriches blockchain data by (1) visualizing Polkadot on-chain data, (2) interpreting it relative to external factors (off-chain data from public APIs), and (3) generating predictions around key token metrics from the aggregation of the two. The platform offers a transparent analysis of the parachain transactions generated in the Polkadot ecosystem. Concurrently, our platform fetches real-world off-chain data (e.g., news feeds, election campaigns, Reddit, Tweets, crypto media, weather, COVID-19, WHO, etc.) and leverages Machine Learning models to gauge the market sentiment on a given chain or asset. PolkaBox seeks to be the first robust aggregator of on-chain and off-chain data for Polkadot. Finally, the goal is to publish developer-friendly APIs for anyone to build on top of PolkaBox using raw and/or enriched data to tackle real-world problems.
+PolkaBox is an open data platform focused on prediction and market sentiment analysis of Polkadot on-chain data. Our goal is to enrich Polkadot data by (1) visualizing it, (2) interpreting it relative to external factors (off-chain data from public APIs), and (3) generating predictions around key token metrics from the aggregation of the two. The platform offers a transparent analysis of the parachain transactions generated in the Polkadot ecosystem. Concurrently, our platform fetches real-world off-chain data (e.g., news feeds, crypto media, weather, COVID-19, WHO, etc.) and leverages Machine Learning models to gauge the market sentiment on a given chain or asset. PolkaBox seeks to be the first robust aggregator of on-chain and off-chain data for Polkadot with a focus on prediction and market sentiment. Finally, the goal is to publish developer-friendly APIs for anyone to build on top of PolkaBox using raw and/or enriched data to tackle real-world problems.
  
 ### Project Details
 
 We are a team of software engineers and data scientists who love using data to breathe life into products. As such, the goal of this project is to add several layers of data to Polkadot to help the world answer interesting questions such as “How has Covid-19 or a ‘third wave’ affected the amount of staked DOT?” or “How does a US president losing interim elections affect the price of DOT? Or any currencies moving on bridges or chains?”
-Our project, PolkaBox is an open platform + dashboard for creating a huge lake of on-and off-chain data, ingesting this with typical ML libraries i.e. Random forest classification, and applying these modules to provide predictive answers to complex questions, all displayed graphically and beautifully. In addition to this, it only makes sense to bake in a block explorer and some typical data visualization one might expect including bridge GDP, chain TVL, etc.
+Our project, PolkaBox is an open platform + dashboard for creating a huge lake of on-and off-chain data, ingesting this with typical ML libraries i.e. Random forest classification, and applying these modules to provide predictive answers to complex questions, all displayed graphically and beautifully. 
  
 #### Architecture
 
 ![](https://github.com/BalloonBox-Inc/polkadot-analytics/blob/main/images/PolkaBox_architecture.png)
 
 #### Infrastructure Components
-1. **Indexers**: an indexer is a node operator used to extract, transform, and load data from an active blockhain node into a pre-defined schema of tables in a database. Since Polkadot is a network of parachains, each with their own metadata, we will build a different indexer for each parachain we want to access. Instead of building our indexers from scratch, we will deploy and expand pre-existing open source indexer instances. Specifically, we'll use two tools: [1.] [SubQuery](https://subquery.network/), a GraphQL API-based blockchain indexer for Polkadot, Kusama, and other parachains, the [2.] [web3go](https://github.com/web3go-xyz) indexer instances which are a customized version of the SubQuery framework. Web3Go is an ongoing open-source project recipient of a Web3Foundation Grant.
+1. **Indexers**: an indexer is a node operator used to extract, transform, and load data from an active blockhain node into a pre-defined schema of tables in a database. Since Polkadot is a network of parachains, each with its own metadata, we will build a different indexer for each parachain we want to access. Instead of building our indexers from scratch, we will deploy and expand pre-existing open-source indexer instances. Specifically, we'll use two tools: (1.) [SubQuery](https://subquery.network/), a GraphQL API-based blockchain indexer for Polkadot, Kusama, and other parachains, the (2.) [web3go](https://github.com/web3go-xyz) indexer instances which are a customized version of the SubQuery framework. Web3Go is an ongoing open-source project recipient of a Web3Foundation Grant.
 
 2. **Database**: PostgreSQL database for storing blockchain + external data
-
 
 3. **External Data Sources**: A combination of WebSocket connections and web scraping tools for assessing public records. PolkaBox will have several services running on near-real-time schedules to retrieve, clean, format, and store data from external sources. The goal is to keep these APIs public to make the intelligence in the entire dashboard open-sourced as anyone can then fork the PolkaBox and spin it up. 
 
@@ -51,7 +50,7 @@ Throughout this application, we define ‘Market Sentiment’ to be the general 
 
 * **PolkaBox in Polkadot Ecosystem**
 
-    PolkaBox seeks to build a platform to give visibility to parachain transactions in the Polkadot network. Additionally, our platform will aggregate external data sources (RSS feeds, COVID-19, Weather, Coinbase, etc.) to the native Substrate data, so that we can inform the Polkadot/Kusama ecosystem of its public reputation in the media and let on-chain transactions dialogue with the current market sentiment. Thus, PolkaBox will play an important role in the Polkadot network both as a prediction tool and as a market sentiment analysis tool, pursuing “less trust, more truth”. Our project will prioritize the tokens of the Polkadot ecosystem. 
+    PolkaBox seeks to build a platform to interpret parachain transactions in the Polkadot network. Our platform aggregates external data sources (RSS feeds, COVID-19, Weather, Coinbase, etc.) to the native Substrate data, so that we can inform the Polkadot/Kusama ecosystem of its public reputation in the media and let on-chain transactions dialogue with the current market sentiment. Thus, PolkaBox will play an important role in the Polkadot network both as a prediction tool and as a market sentiment analysis tool, pursuing “less trust, more truth”. Our project will prioritize the tokens of the Polkadot ecosystem. 
  
 * **Target Audience**
 
@@ -82,8 +81,13 @@ Throughout this application, we define ‘Market Sentiment’ to be the general 
 
     Comparison with projects inside of the Polkadot ecology. Polkascan, Polkastats, and Subscan are Polkadot-based block explorers. They purely feature on-chain data but they have no tool to interpret and relate given data to off-chain events. They also don’t feature any predictions, which, on the other hand, is the battle horse of X Predict Market, a prediction market that focuses on community and sociability. Unfortunately, the latter also lacks the integration of off-chain data to generate predictions.
 
-    What differentiates us is that PolkaBox will be the first project in the Polkadot ecology to aggregate granular parachain data with off-chain public APIs. We will also be the first Polkadot project with a focus on market sentiment.
- 
+    What differentiates us is that PolkaBox:
+* is the first project in the Polkadot ecology to aggregate granular parachain data with off-chain news feed
+* is the first Polkadot project with a strong focus on market sentiment
+* uses Python as core language, offering Python SDKs
+* relies on performant GraphQL syntax to quickly query Polkadot data through SubQuery
+
+
 ## Team :busts_in_silhouette:
 ### Team members
 * Michael Brink
@@ -136,24 +140,20 @@ Our team consists of the following roles:
 - https://www.linkedin.com/in/imyoonkim/ Yoon Kim
  
 ## Development Status :open_book:
-We have completed the planning of the product prototype and the design of the UI diagram. Check the following link:
+We have completed the planning of the product prototype and the design of the UI diagram. Check the following [link](https://github.com/BalloonBox-Inc/polkadot-analytics/tree/main/UI%20diagrams)
 
-https://github.com/BalloonBox-Inc/polkadot-analytics/tree/main/UI%20diagrams
-
-We have created a deployment and usage how-to-article describing the deliverable of our first and second milestones. Check the following link:
-
-https://docs.google.com/document/d/1aLSm9HK-3YtwjXKLh_KPRL75P8t8zleEMNInyZl445k/edit?usp=sharing
+We have created a deployment and usage how-to-article describing the deliverable of our second milestone (API component). Check the following [link](https://docs.google.com/document/d/1aLSm9HK-3YtwjXKLh_KPRL75P8t8zleEMNInyZl445k/edit?usp=sharing)
  
 ## Development Roadmap :nut_and_bolt:
 ### Overview
 - **Total Estimated Duration:** 3 months 
 - **Full-Time Equivalent (FTE):**  4.5
-- **Total Costs:** 49,000 USD 
+- **Total Costs:** 47,000 USD 
  
 ### Milestone 1 - Indexer Instances, Database, API Layer #1, Data Board, More Tokens
 - **Estimated duration:** 1 month
 - **FTE:**  5
-- **Costs:** 20,000 USD
+- **Costs:** 18,000 USD
  
 | Number | Deliverable | Specification |
 | -----: | ----------- | ------------- |
@@ -206,10 +206,11 @@ https://docs.google.com/document/d/1aLSm9HK-3YtwjXKLh_KPRL75P8t8zleEMNInyZl445k/
 | 3. | Platform Navigation Tools | Implement a search tool to filter selected news articles by pertinent hot word. |
 | 4. | Sentiment Analysis Module | Generate a dashboard for Market Sentiment Analysis. Include a gauge chart for market sentiment visualization as well as a list of news feeds filtered by keyword. At the start, we will constrain the news feed to a maximum of 5 news sources. |
 | 5. |  DeFi Tracking | Substantiate the Sentiment Analysis dashboard visualizing on-chain data on DeFi Tracking. Include dashboard tile of chain GDP, Plotly Sankey plot for deposited and withdrawn assets by volume, donut plot of chain GDP breakdown by asset.  |
-| 6. | Predictive Analysis Module | Aggregate raw data (blockchain and external), run ML model on historical price trend and market sentiment data, and cast price prediction for a maximum of the tokens in Polkadot ecosystem, i.e. the top 10 tomen by TLV, such as, DOT, LINK, KSM, etc.  |
-| 7. |  Benchmark  | Provide a short commentary comparing the performance of our predictive algorithms with two other prediction models in the Polkadot/Kusama ecosystem, e.g., comparison with [XPredictMarket](https://github.com/w3f/Grants-Program/blob/master/applications/XPredictMarket.md) |
-| 8. | UI Module: refine WebApp | Improve functionality and aesthetics, layout, and UI feedback (e.g., icon badge, modal alerts) | 
-| 9. |  File Processing  | Implement in our platform file operation services such as dashboard tile download, table download, and page download as pdf or csv file. |
+| 6. | Predictive Analysis Module | Aggregate raw data (blockchain and external), run ML model on historical price trend and market sentiment data, and cast price prediction for a maximum of the tokens in Polkadot ecosystem, i.e. the top 10 token by TLV, such as DOT, LINK, KSM, etc.  |
+| 7. | Python SDK | We will develop a Python tool kit as an installable package allowing developers to run our platform tools in their local machine. We strive to develop open-source software that incentivizes replicability and deployment of the predictive and market sentiment functions featured in PolkaBox. |
+| 8. |  Benchmark  | Provide a short commentary comparing the performance of our predictive algorithms with two other prediction models in the Polkadot/Kusama ecosystem, e.g., comparison with [XPredictMarket](https://github.com/w3f/Grants-Program/blob/master/applications/XPredictMarket.md) |
+| 9. | UI Module: refine WebApp | Improve functionality and aesthetics, layout, and UI feedback (e.g., icon badge, modal alerts) | 
+| 10. |  File Processing  | Implement in our platform file operation services such as dashboard tile download, table download, and page download as pdf or csv file. |
 
  
  
