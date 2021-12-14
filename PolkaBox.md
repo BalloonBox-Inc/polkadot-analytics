@@ -140,9 +140,9 @@ Our team consists of the following roles:
 - https://www.linkedin.com/in/imyoonkim/ Yoon Kim
  
 ## Development Status :open_book:
-We have completed the planning of the product prototype and the design of the UI diagram. Check the following [link](https://github.com/BalloonBox-Inc/polkadot-analytics/tree/main/UI%20diagrams)
+We have completed the planning of the product prototype and the design of the UI diagram. Check the following [link](https://github.com/BalloonBox-Inc/polkadot-analytics/tree/main/UI%20diagrams).
 
-We have created a deployment and usage how-to-article describing the deliverable of our second milestone (API component). Check the following [link](https://docs.google.com/document/d/1aLSm9HK-3YtwjXKLh_KPRL75P8t8zleEMNInyZl445k/edit?usp=sharing)
+We have created a deployment and usage how-to-article describing the deliverable of our second milestone (API component). Check the following [link](https://docs.google.com/document/d/1aLSm9HK-3YtwjXKLh_KPRL75P8t8zleEMNInyZl445k/edit?usp=sharing).
  
 ## Development Roadmap :nut_and_bolt:
 ### Overview
@@ -152,7 +152,7 @@ We have created a deployment and usage how-to-article describing the deliverable
  
 ### Milestone 1 - Indexer Instances, Database, API Layer #1, Data Board, More Tokens
 - **Estimated duration:** 1 month
-- **FTE:**  5
+- **FTE:**  4.5
 - **Costs:** 18,000 USD
  
 | Number | Deliverable | Specification |
